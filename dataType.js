@@ -16,5 +16,23 @@ let  city=null //null
 // undefined=>no value   non-standard value
 // symbol=>unique value
 // object=>key-value pair
-console.log(typeof name); // string
-console.log(typeof city); // object (null is considered an object in JavaScript)
+// console.log(typeof name); // string
+// console.log(typeof city); // object (null is considered an object in JavaScript)
+/////////// Opration/////////////
+
+let value=3
+let negVal=-value
+// console.log(negVal)
+// let str1="hello"
+// let str2="hithes"
+// console.log(str1+str2)
+// console.log("1"+2) 
+//console.log("1"+2+2)   output    122
+//console.log(1+2+"2")   output   32
+// console.log(+true)
+let num1 ,num2 , num3
+num1=num2=num3=2
+let counter=100
+console.log(counter++) // this is postfix incremenr
+console.log(++counter) // this prifix increment
+
