@@ -46,7 +46,7 @@ const s="shivam"
 console.log(Array.isArray(s))///chek true or fasle
 console.log(Array.from(s)) // for making array
 
-console.log(Array.from({name:"shivam "})) // it will give us emty array
+console.log(Array.from({name:"shivam "})) // it will give us emty array becouse of that no undersatabdable 
 
 let s1=100
 let s2=200
