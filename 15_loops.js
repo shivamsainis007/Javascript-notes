@@ -65,4 +65,40 @@
 //         console.log(`Key: ${key}, Value: ${value}`);
 //     }
 // }
+// +++++++++++++++++map++++++++++++++++++++++++++++++
+const myMap=new Map();
+myMap.set("name","John");
+myMap.set("age",30);
+myMap.set("city","New York");
+for(const [key, value] of myMap) {
+    // console.log(`Key: ${key}, Value: ${value}`);
+}
 
+// ++++++++++++++++++++++for each++++++++++++++++++++++++++++++
+const arr = [1, 2, 3, 4, 5];
+arr.forEach((element, index) => {   /// here we use a funtion as a parameter
+    // console.log(`Element at index ${index} is: ${element}`);
+});
+
+ function printme(item){
+   
+    // console.log(`Element is: ${item}`);
+ }
+    arr.forEach(printme); // passing a function as a parameter
+
+arr.forEach((item, index,arr)=> {
+    // console.log(`Element at index ${index} is: ${item}`);
+    // console.log(`Array is: ${arr}`)
+})
+
+
+const arr1=[
+    {name:"John",
+    age:30},
+    {name:"Jane",age:25},
+    {name:"Doe",age:35}
+]
+
+arr1.forEach((item, index) => {
+    console.log(`Name: ${item.name}, Age: ${item.age}, Index: ${index}`);
+})
