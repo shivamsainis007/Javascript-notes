@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom element edit and remove</title>
+</head>
+<body style="background-color: black; color: white; font-size: 30px">
+    <ul class="Laguage">
+        <li>javascript</li>
+    
+    </ul>
+    
+</body>
+<script>
+    function addElement(lagname){
+     const list = document.querySelector('.Laguage');
+     const li = document.createElement('li');
+     li.innerText = `${lagname}`;
+     list.appendChild(li);
+    }
+    addElement('python');
+    addElement('java');
+    addElement('c++');
+    arr=document.querySelectorAll('.Laguage');
+    Array.from(arr).forEach((element)=>{
+        element.style.color='red';})
+
+    const saecounElement=document.querySelector('.Laguage li:nth-child(2)');//python
+    const newlo=document.createElement('li');
+    newlo.appendChild(document.createTextNode('mojo'));
+    saecounElement.replaceWith(newlo);
+</script>
+</html>
