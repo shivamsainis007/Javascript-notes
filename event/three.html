@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum dolores omnis praesentium quam aut sequi beatae animi inventore odit.</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    
+</body>
+
+<script>
+    let intervalId;
+    const chnageText=function(){
+            document.querySelector('#h1').innerHTML="text is changed";
+            
+            console.log("text changed");
+        }
+        
+    document.querySelector('#start').addEventListener('click' ,function(){
+        console.log("start button clicked");
+        if (!intervalId) {
+            
+        intervalId= setInterval(chnageText, 2000);
+        };
+    })
+    document.querySelector('#stop').addEventListener('click', function() {
+        clearInterval(intervalId);
+        intervalId = null; // Reset the intervalId to allow starting again
+        console.log("interval cleared");
+    });
+</script>
+</html>
