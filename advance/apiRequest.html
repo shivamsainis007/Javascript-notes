@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fetiching api</title>
+</head>
+
+<body style="background-color: #212121">
+    <ul style="color: whitesmoke">
+        <li>0 UNSENT Client has been created. open() not called yet.</li>
+        <li>1 OPENED open() has been called.</li>
+        <li>
+            2 HEADERS_RECEIVED send() has been called, and headers and status are
+            available.
+        </li>
+        <li>3 LOADING Downloading; responseText holds partial data.</li>
+
+        <li>4 DONE The operation is complete.</li>
+    </ul>
+</body>
+<script>
+    let avatardfs ;
+    const requestUrl = "https://api.github.com/users/shivamsainis007";
+    const xhr = new XMLHttpRequest();
+
+    xhr.open("GET", requestUrl);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText);
+            const avatar = data.avatar_url;
+            const followCount = data.followers;
+            avatardfs = data.avatar_url;
+            image.setAttribute("src", avatar);
+            followerText.textContent = `Followers: ${followCount}`;
+            // ✅ Now that we have avatar, build the card:
+
+            
+        }
+    };
+
+    xhr.send();
+    xhr.onload = function () {
+        console.log("Request completed successfully", avatardfs);
+    };
+    
+    const div = document.createElement("div");
+    div.id = "card";
+    div.style.cssText =
+        "background-color: red; height: 200px; width: 200px; padding: 10px; ";
+
+    const image = document.createElement("img");
+     // ✅ Use variable, not string
+    image.setAttribute("alt", "avatar_image");
+    image.style.width = "50%"; // Optional styling
+    image.style.border = "2px solid black";
+
+    const followerText = document.createElement("p");
+    
+    div.appendChild(image);
+            div.appendChild(followerText);
+            document.body.append(div);
+</script>
+
+</html>
